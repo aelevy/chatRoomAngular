@@ -21,7 +21,7 @@ angular.module("chatRoomApp")
 
    //RETURNS
    return{
-    getMsgs = getMsgs,
-    addMsg = addMsg,
+    getMsgs:getMsgs,
+    addMsg: addMsg,
    };
   });
