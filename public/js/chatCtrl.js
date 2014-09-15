@@ -13,7 +13,7 @@ angular.module("chatRoomApp")
    }).then(function (){
     $location.path("/");
    })
-   $scope.newMsg = {}
+   $scope.msg = {}
   };
 
 
