@@ -6,13 +6,14 @@ angular.module("chatRoomApp")
    $scope.msgs = msgs.data;
   });
 
-  $scope.addMsg = function (msg){
+  $scope.addMsg = function (newMsg){
    chatSvc.addMsg ({
     author: msg.author,
     content: msg.content,
    }).then(function (){
     $location.path("/");
    })
+   $scope.newMsg = {}
   };
 
 

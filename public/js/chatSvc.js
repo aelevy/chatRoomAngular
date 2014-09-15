@@ -9,7 +9,7 @@ angular.module("chatRoomApp")
     return $http.get(messages);
    };
 
-   var addMsg = function (msg){
+   var addMsg = function (newMsg){
     return $http.post(messages, msg).then(function (response){
      $rootScope.$broadcast("message:added");
      $log.info("message added");
