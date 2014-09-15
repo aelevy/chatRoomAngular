@@ -1,14 +1,18 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#/blog">Blog</a></li>
-   
-  </ul>
-  <h3 class="text-muted">baby-mean</h3>
+<div class="createuser">
+
 </div>
 
-<div class="jumbotron">
-  <h1>Welcome to baby-mean</h1>
-  <p><a class="btn btn-lg btn-success" ng-href="#/blog">Go to blog!</a></p>
-</div>
+<div class="container">
+ <div class="chatDisplay" ng-repeat="msg in message">
+ <p>{{msg.author}}: {{msg.content}}</p>
+ </div>
+ <div class="userList">
 
+ </div>
+ <div class="messageSubmit">
+   <form action="" ng-submit="addMsg(msg)">
+    <input type="text" class="authorInput" placeholder="Type Name Here" ng-model="msg.author">
+    <input type="text" class="msgInput" placeholder="Type Message Here" ng-model="msg.content">
+   </form>
+ </div>
+</div>
