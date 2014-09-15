@@ -25,3 +25,5 @@ angular.module("chatRoomApp")
       $scope.msgs = msgs.data;
     });
  });
+
+});
