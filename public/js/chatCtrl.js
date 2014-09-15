@@ -6,7 +6,7 @@ angular.module("chatRoomApp")
    $scope.msgs = msgs.data;
   });
 
-  $scope.addMsg = function (newMsg){
+  $scope.addMsg = function (msg){
    chatSvc.addMsg ({
     author: msg.author,
     content: msg.content,
