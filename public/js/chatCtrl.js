@@ -1,14 +1,16 @@
 angular.module("chatRoomApp")
- .controller("chatCtrl", function ($rootScope, $scope, $location, $routeParams, chatSvc) {
+ .controller("chatCtrl", function ($rootScope, $scope, $location, $routeParams, $interval, chatSvc) {
 
   //MESSAGES//
+  $interval(function() {
   chatSvc.getMsgs().then(function (msgs){
    $scope.msgs = msgs.data;
-  });
+  })
+ }, 500);
 
   $scope.addMsg = function (msg){
    chatSvc.addMsg ({
-    author: msg.author,
+    author: $scope.currentUser,
     content: msg.content,
    }).then(function (){
     $location.path("/");
@@ -17,7 +19,10 @@ angular.module("chatRoomApp")
   };
 
 
-
+//USERS//
+ chatSvc.getUsers().success(function(users){
+  $scope.users = users;
+ });
 
 
   //LISTENERS//
@@ -26,5 +31,9 @@ angular.module("chatRoomApp")
       $scope.msgs = msgs.data;
     });
  });
+
+  $rootScope.$on("user:added", function(){
+   $scope.currentUser = chatSvc.getCurrentUser.name;
+  });
 
 });

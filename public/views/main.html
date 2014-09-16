@@ -1,14 +1,25 @@
 <div class="createuser">
+<form action="" ng-submit = "createUser(user)">
+ <h3>Create User</h3>
+ <input type="text" ng-model="user.name" placeholder="username">
+ <button type="submit">Create</button>
+</form>
+</div>
 
+
+<div>
+ <h3>{{currentUser}}, start typing!</h3>
 </div>
 
 <div class="container">
  <div class="chatDisplay" ng-repeat="msg in msgs">
  <p>{{msg.author}}: {{msg.content}}</p>
  </div>
- <div class="userList">
 
+ <div class="userList" ng-repeat="user in users">
+  <p>{{user.name}}</p>
  </div>
+
  <div class="messageSubmit">
    <form action="" ng-submit="addMsg(msg)">
     <input type="text" class="authorInput" placeholder="Type Name Here" ng-model="msg.author">
@@ -16,4 +27,5 @@
     <button type="submit">Submit</button>
    </form>
  </div>
+ 
 </div>

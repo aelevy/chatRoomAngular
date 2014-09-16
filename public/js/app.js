@@ -3,8 +3,6 @@
 angular
   .module('chatRoomApp', [
     'ngCookies',
-    'ngResource',
-    'ngSanitize',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
