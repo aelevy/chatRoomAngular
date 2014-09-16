@@ -24,6 +24,10 @@ angular.module("chatRoomApp")
   $scope.users = users;
  });
 
+ $scope.createUser = function(newUser) {
+  chatSvc.createUser(newUser);
+  $location.path("/");
+ };
 
   //LISTENERS//
   $rootScope.$on("message:added", function () {
