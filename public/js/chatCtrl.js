@@ -37,7 +37,7 @@ angular.module("chatRoomApp")
  });
 
   $rootScope.$on("user:added", function(){
-   $scope.currentUser = chatSvc.getCurrentUser.name;
+   $scope.currentUser = chatSvc.getCurrentUser;
   });
 
 });
