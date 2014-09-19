@@ -21,7 +21,7 @@ angular.module("chatRoomApp")
 
 //USERS//
  chatSvc.getUsers().success(function(users){
-  $scope.users = users;
+  $scope.users = users.data;
  });
 
  $scope.createUser = function(newUser) {
@@ -37,7 +37,7 @@ angular.module("chatRoomApp")
  });
 
   $rootScope.$on("user:added", function(){
-   $scope.currentUser = chatSvc.getCurrentUser.user;
+   $scope.currentUser = chatSvc.getCurrentUser.name;
   });
 
 });
