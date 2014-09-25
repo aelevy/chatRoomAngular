@@ -26,7 +26,7 @@ angular.module("chatRoomApp")
 
  $scope.createUser = function(newUser) {
   chatSvc.createUser(newUser);
-  $location.path("/");
+  $location.path("/chat");
  };
 
   //LISTENERS//

@@ -41,6 +41,7 @@ angular.module("chatRoomApp")
     getMsgs:getMsgs,
     addMsg: addMsg,
     getUsers: getUsers,
-    createUser: createUser
+    createUser: createUser,
+    getCurrentUser: getCurrentUser
    };
   });
